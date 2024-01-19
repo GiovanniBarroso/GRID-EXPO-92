@@ -1,0 +1,207 @@
+/* Estilos para el cuerpo del documento */
+body {
+    background: url('ruta_a_tu_imagen');
+    justify-content: center;
+}
+
+
+
+/* Estilos para los hipervínculos */
+a {
+    text-decoration: none;
+    color: #F6D155;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para la cabecera de la página */
+header {
+    padding: 20px;
+    color: white;
+    background-color: #223A5E;
+    border-bottom: 5px solid gray;
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+header h1 {
+    color: white;
+
+}
+
+header::first-letter {
+    font-size: 1.5em;
+}
+
+#contenedor {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "indice"
+        "caja1"
+        "caja2"
+        "caja3"
+        "caja4"
+        "footer"
+    ;
+}
+
+#titulo {
+    grid-area: header;
+}
+
+
+#caja1 {
+    grid-area: caja1;
+}
+
+#caja2 {
+    grid-area: caja2;
+}
+
+#caja3 {
+    grid-area: caja3;
+}
+
+#caja4 {
+    grid-area: caja4;
+}
+
+/* Estilos para el panel izquierdo de navegación */
+#nav {
+    grid-area: indice;
+    background-color: #223A5E;
+    color: white;
+    margin: 2em 0 2em 0;
+}
+
+nav h3 {
+    text-align: center;
+}
+
+/* Estilos para el artículo principal de la página */
+
+h1 {
+    color: brown;
+    border-bottom: 1px solid brown;
+}
+
+h2 {
+    color: brown;
+    font-style: italic;
+}
+
+
+.p1 {
+    text-align: center;
+    font-style: italic;
+}
+
+/* Estilos para las tablas */
+
+.table-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table td,
+table th {
+    text-align: center;
+    margin: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.308);
+    padding: 10px;
+}
+
+table .tr1:first-child {
+    color: white;
+    background-color: #223A5E;
+}
+
+table tr:nth-child(odd) {
+    background-color: #D49F75;
+}
+
+table tr:nth-child(even) {
+    background-color: #C48F65;
+}
+
+/* Estilos para las imágenes */
+
+#flex {
+    align-items: center;
+    display: flex;
+    flex-flow: row;
+}
+
+#flex img {
+    max-width: 100%;
+}
+
+img {
+    border: 3px solid gray;
+    display: block;
+    margin: auto;
+}
+
+figcaption {
+    font-style: italic;
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+/* Estilos para el bloque de imágenes */
+
+footer {
+    grid-area: footer;
+    border-top: 5px solid gray;
+    padding: 1em 0 1em 0;
+    text-align: center;
+    background-color: #223A5E;
+    color: white;
+}
+
+/* Aquí van tus estilos para pantallas de tamaño completo */
+
+@media screen and (min-width: 768px) {
+    #contenedor {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "header header header header"
+            "indice caja1 caja1 sidebar"
+            "sidebar1 caja2 caja2 sidebar"
+            "sidebar1 caja3 caja3 sidebar"
+            "sidebar1 caja4 caja4 sidebar"
+            "footer footer footer footer";
+    }
+
+    #derecha {
+        grid-area: sidebar;
+    }
+
+    #izquierda {
+        grid-area: sidebar1;
+    }
+
+    #flex {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #nav {
+        width: 17vw;
+        height: fit-content;
+    }
+}
