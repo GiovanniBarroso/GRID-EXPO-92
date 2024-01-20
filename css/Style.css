@@ -1,10 +1,8 @@
 /* Estilos para el cuerpo del documento */
 body {
-    background: url('ruta_a_tu_imagen');
+    background: url(../imagenes/fondo.jpg);
     justify-content: center;
 }
-
-
 
 /* Estilos para los hipervínculos */
 a {
