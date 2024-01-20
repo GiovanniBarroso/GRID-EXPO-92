@@ -10,13 +10,14 @@ a {
     color: #F6D155;
 }
 
+/* Subrallado si cursor encima del índice */
 a:hover {
     text-decoration: underline;
 }
 
 /* Estilos para la cabecera de la página */
 header {
-    padding: 20px;
+    padding-bottom: 20px;
     color: white;
     background-color: #223A5E;
     border-bottom: 5px solid gray;
@@ -32,10 +33,12 @@ header h1 {
 
 }
 
+/* Primera letra del header de mayor tamaño */
 header::first-letter {
     font-size: 1.5em;
 }
 
+/* Estructura grid formato movil */
 #contenedor {
     display: grid;
     grid-template-areas:
@@ -49,10 +52,10 @@ header::first-letter {
     ;
 }
 
+/* Asignar valores para grid. */
 #titulo {
     grid-area: header;
 }
-
 
 #caja1 {
     grid-area: caja1;
@@ -70,6 +73,8 @@ header::first-letter {
     grid-area: caja4;
 }
 
+
+
 /* Estilos para el panel izquierdo de navegación */
 #nav {
     grid-area: indice;
@@ -79,6 +84,7 @@ header::first-letter {
 }
 
 nav h3 {
+    color: white;
     text-align: center;
 }
 
@@ -89,7 +95,7 @@ h1 {
     border-bottom: 1px solid brown;
 }
 
-h2 {
+h3 {
     color: brown;
     font-style: italic;
 }
@@ -100,8 +106,8 @@ h2 {
     font-style: italic;
 }
 
-/* Estilos para las tablas */
 
+/* Estilos para las tablas */
 .table-container {
     display: flex;
     justify-content: center;
@@ -134,22 +140,23 @@ table tr:nth-child(even) {
     background-color: #C48F65;
 }
 
-/* Estilos para las imágenes */
 
-#flex {
-    align-items: center;
+/* Estilos para las imágenes */
+#fotos {
     display: flex;
-    flex-flow: row;
+    justify-content: space-around;
 }
 
-#flex img {
+figure {
+    text-align: center;
+}
+
+#fotos img {
     max-width: 100%;
 }
 
 img {
     border: 3px solid gray;
-    display: block;
-    margin: auto;
 }
 
 figcaption {
@@ -158,8 +165,7 @@ figcaption {
     margin-top: 0.5em;
 }
 
-/* Estilos para el bloque de imágenes */
-
+/* Estilo para el footer */
 footer {
     grid-area: footer;
     border-top: 5px solid gray;
@@ -169,7 +175,7 @@ footer {
     color: white;
 }
 
-/* Aquí van tus estilos para pantallas de tamaño completo */
+/* Estilo para pantallas de tamaño completo */
 
 @media screen and (min-width: 768px) {
     #contenedor {
@@ -183,19 +189,14 @@ footer {
             "footer footer footer footer";
     }
 
+    /* Esto en concreto lo he necesitado para que tenga buena estructuración el grid
+    Si elimino derecha e izquierda no implica cambio, aunque me genera dudas*/
     #derecha {
         grid-area: sidebar;
     }
 
     #izquierda {
         grid-area: sidebar1;
-    }
-
-    #flex {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
     }
 
     #nav {
